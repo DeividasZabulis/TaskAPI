@@ -10,6 +10,8 @@
 		3F02CFC629ACD24B0014A9B3 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02CFC529ACD24B0014A9B3 /* RegistrationViewController.swift */; };
 		3F02CFC829ACD7390014A9B3 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02CFC729ACD7390014A9B3 /* TasksViewController.swift */; };
 		3F02CFCA29ACD7E30014A9B3 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02CFC929ACD7E30014A9B3 /* AddTaskViewController.swift */; };
+		3F02CFCD29ACE6560014A9B3 /* TasksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02CFCC29ACE6560014A9B3 /* TasksService.swift */; };
+		3F02CFCF29ACE7A20014A9B3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02CFCE29ACE7A20014A9B3 /* NetworkService.swift */; };
 		3FEAE60A29ACC82D007BE10D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEAE60929ACC82D007BE10D /* AppDelegate.swift */; };
 		3FEAE60C29ACC82D007BE10D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEAE60B29ACC82D007BE10D /* SceneDelegate.swift */; };
 		3FEAE60E29ACC82D007BE10D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEAE60D29ACC82D007BE10D /* LoginViewController.swift */; };
@@ -22,6 +24,8 @@
 		3F02CFC529ACD24B0014A9B3 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		3F02CFC729ACD7390014A9B3 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		3F02CFC929ACD7E30014A9B3 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		3F02CFCC29ACE6560014A9B3 /* TasksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksService.swift; sourceTree = "<group>"; };
+		3F02CFCE29ACE7A20014A9B3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		3FEAE60629ACC82D007BE10D /* TasksAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TasksAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEAE60929ACC82D007BE10D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FEAE60B29ACC82D007BE10D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F02CFCB29ACE61F0014A9B3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3F02CFCC29ACE6560014A9B3 /* TasksService.swift */,
+				3F02CFCE29ACE7A20014A9B3 /* NetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		3FEAE5FD29ACC82D007BE10D = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +81,7 @@
 				3FEAE60D29ACC82D007BE10D /* LoginViewController.swift */,
 				3F02CFC729ACD7390014A9B3 /* TasksViewController.swift */,
 				3F02CFC929ACD7E30014A9B3 /* AddTaskViewController.swift */,
+				3F02CFCB29ACE61F0014A9B3 /* Service */,
 				3FEAE60F29ACC82D007BE10D /* Main.storyboard */,
 				3FEAE61229ACC82E007BE10D /* Assets.xcassets */,
 				3FEAE61429ACC82E007BE10D /* LaunchScreen.storyboard */,
@@ -149,9 +163,11 @@
 			files = (
 				3FEAE60E29ACC82D007BE10D /* LoginViewController.swift in Sources */,
 				3F02CFCA29ACD7E30014A9B3 /* AddTaskViewController.swift in Sources */,
+				3F02CFCF29ACE7A20014A9B3 /* NetworkService.swift in Sources */,
 				3FEAE60A29ACC82D007BE10D /* AppDelegate.swift in Sources */,
 				3F02CFC829ACD7390014A9B3 /* TasksViewController.swift in Sources */,
 				3F02CFC629ACD24B0014A9B3 /* RegistrationViewController.swift in Sources */,
+				3F02CFCD29ACE6560014A9B3 /* TasksService.swift in Sources */,
 				3FEAE60C29ACC82D007BE10D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,11 @@ import UIKit
 
 class TasksViewController: UIViewController, UITableViewDataSource {
     
+    //MARK: - Outlets
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +22,8 @@ class TasksViewController: UIViewController, UITableViewDataSource {
         setupNavigationBar()
         self.navigationItem.setHidesBackButton(true, animated: false)
     }
+    
+    //MARK: - Functionality
     
     @objc private func didTapAdd() {
         
