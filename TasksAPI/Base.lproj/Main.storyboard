@@ -126,7 +126,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5NE-f0-Dh8">
-                                <rect key="frame" x="0.0" y="103" width="393" height="665"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="632"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="bky-B1-eHe">
@@ -139,27 +139,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6fO-ee-oKY">
-                                <rect key="frame" x="0.0" y="768" width="393" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="qwd-Bv-Stk"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="" image="newspaper.fill" catalog="system"/>
-                                    <segment title="" image="person" catalog="system"/>
-                                </segments>
-                            </segmentedControl>
+                            <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkq-qm-s9a">
+                                <rect key="frame" x="0.0" y="735" width="393" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem badgeValue="Tasks" selectedImage="newspaper.fill" catalog="system" id="6oY-a5-rXF"/>
+                                    <tabBarItem badgeValue="User" selectedImage="person" catalog="system" id="Dp2-3o-74C"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="B65-Du-2b3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="B65-Du-2b3" firstAttribute="bottom" secondItem="nkq-qm-s9a" secondAttribute="bottom" id="0Ss-oc-feg"/>
                             <constraint firstItem="5NE-f0-Dh8" firstAttribute="leading" secondItem="B65-Du-2b3" secondAttribute="leading" id="6Mt-N8-qax"/>
-                            <constraint firstItem="6fO-ee-oKY" firstAttribute="top" secondItem="5NE-f0-Dh8" secondAttribute="bottom" id="JHK-3P-13S"/>
-                            <constraint firstItem="B65-Du-2b3" firstAttribute="trailing" secondItem="6fO-ee-oKY" secondAttribute="trailing" id="cjb-MX-Qiq"/>
-                            <constraint firstItem="6fO-ee-oKY" firstAttribute="leading" secondItem="B65-Du-2b3" secondAttribute="leading" id="gHA-Hi-mOI"/>
+                            <constraint firstItem="nkq-qm-s9a" firstAttribute="leading" secondItem="B65-Du-2b3" secondAttribute="leading" id="CF2-s3-WMU"/>
+                            <constraint firstItem="nkq-qm-s9a" firstAttribute="trailing" secondItem="B65-Du-2b3" secondAttribute="trailing" id="OMX-3a-SFT"/>
+                            <constraint firstItem="nkq-qm-s9a" firstAttribute="top" secondItem="5NE-f0-Dh8" secondAttribute="bottom" id="a1A-Ms-iCa"/>
                             <constraint firstItem="5NE-f0-Dh8" firstAttribute="top" secondItem="B65-Du-2b3" secondAttribute="top" id="rnh-2b-k08"/>
                             <constraint firstItem="B65-Du-2b3" firstAttribute="trailing" secondItem="5NE-f0-Dh8" secondAttribute="trailing" id="sRN-w9-mqB"/>
-                            <constraint firstItem="B65-Du-2b3" firstAttribute="bottom" secondItem="6fO-ee-oKY" secondAttribute="bottom" id="vFp-OG-Xc7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xja-H0-uFx"/>
@@ -231,7 +229,7 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="JfE-0j-58y" kind="show" id="tfb-O1-DII"/>
+                                    <action selector="registerTapped:" destination="6P3-n6-XfC" eventType="touchUpInside" id="1QJ-3e-Ab7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Already registered?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHw-8V-w9q">
@@ -287,6 +285,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UGE-7f-wgf"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="xcf-Q2-2Ix" id="3ai-qO-ewJ"/>
+                        <outlet property="usernameTextField" destination="OZR-Th-Dr6" id="qTN-iZ-6La"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Yo-iB-ZWt" sceneMemberID="firstResponder"/>
             </objects>
@@ -312,9 +314,6 @@
             <point key="canvasLocation" x="1208" y="-30"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="6XE-CV-3CB"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="newspaper.fill" catalog="system" width="128" height="112"/>
         <image name="person" catalog="system" width="128" height="121"/>

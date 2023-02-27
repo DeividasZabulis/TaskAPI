@@ -8,11 +8,23 @@
 import UIKit
 
 class RegistrationViewController: UIViewController {
+    
+    
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
-
+    @IBAction func registerTapped(_ sender: Any) {
+        let tasksService = TasksService()
+        tasksService.registration { registration in
+                return
+        }
+        return
+    }
+    
 }
