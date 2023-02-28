@@ -16,20 +16,35 @@ class TasksService {
     
     // MARK: - Properties
     
-    let baseURL = "http://134.122.94.77/api/user/register"
+    let baseURL = "http://134.122.94.77/api"
+    let registrationEndPoint = "/user/register"
+    let loginEndPoint = "/user/login"
     private var dataTask: URLSessionDataTask?
     
-    func registration(completion: @escaping (Register) -> Void) {
-        let url = URL(string: baseURL)
-        let register = Register(username: "antanas", password: "aaaa")
+    func registration(username: String, password: String, completion: @escaping (User?) -> Void) {
+        let url = URL(string: baseURL + registrationEndPoint)
+        let register = Register(username: username, password: password)
         let data = try? JSONEncoder().encode(register)
-        NetworkService.post(url: url!, body: data) { data in
-            print(String(data: data!, encoding: .utf8)!)
+        NetworkService.post(url: url!, body: data) { responseData in
+            if let responseData = responseData {
+                let userID = try? JSONDecoder().decode(User.self, from: responseData)
+                completion(userID)
+            } else { completion(nil)
+                return }
         }
     }
     
     
-//    private func login(completion: @escaping (Login) -> Void) {
-//
-//    }
+    func login(username: String, password: String, completion: @escaping (User?) -> Void) {
+        let url = URL(string: baseURL + loginEndPoint)
+        let login = Login(username: username, password: password)
+        let data = try? JSONEncoder().encode(login)
+        NetworkService.post(url: url!, body: data) { responseData in
+            if let responseData = responseData {
+                let userID = try? JSONDecoder().decode(User.self, from: responseData)
+                completion(userID)
+            } else { completion(nil)
+                return }
+        }
+    }
 }
